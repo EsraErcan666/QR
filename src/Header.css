@@ -1,20 +1,20 @@
-/* VARIABLES */
 :root {
-    --primary: #4361ee;
-    --dark: #1b263b;
-    --light: #f8f9fa;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --color-primary: #5f27cd;
+    --color-dark: #1e1e2f;
+    --color-light: #f1f2f6;
+    --color-white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
 }
 
-/* BASE STYLES */
+/* HEADER GENEL YAPI */
 .header {
-    background: white;
+    background: var(--color-white);
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
-    z-index: 100;
-    padding: 0.5rem 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header-container {
@@ -24,111 +24,122 @@
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
-    height: 100px;
-    /* Header yüksekliğini artırdık */
+    height: 90px;
 }
 
-/* LOGO STYLES */
-.logo {
+.header-left,
+.header-right {
+    flex: 1;
     display: flex;
     align-items: center;
-    z-index: 101;
-    /* Menünün üstünde görünsün */
 }
 
+/* LOGO */
 .logo-image {
-    height: 90px;
-    /* Logoyu büyüttük */
-    width: auto;
-    transition: var(--transition);
+    height: 80px;
+    transition: transform var(--transition);
 }
 
 .logo-image:hover {
     transform: scale(1.05);
 }
 
-/* MERKEZ MENÜ */
+/* NAVIGATION (DESKTOP) */
 .nav-menu {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-list {
     display: flex;
     gap: 2rem;
-    /* Buton aralıklarını artırdık */
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+.nav-item {}
+
 .nav-link {
-    color: var(--dark);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    /* Yazı boyutunu büyüttük */
-    padding: 0.5rem 1rem;
+    color: var(--color-dark);
+    font-weight: 600;
+    font-size: 1rem;
     position: relative;
     transition: var(--transition);
-    display: block;
 }
 
 .nav-link:hover {
-    color: var(--primary);
+    color: var(--color-primary);
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
+    bottom: -4px;
+    left: 0;
     height: 2px;
-    background: var(--primary);
-    transition: var(--transition);
+    width: 0%;
+    background: var(--color-primary);
+    transition: width var(--transition);
 }
 
 .nav-link:hover::after {
-    width: 60%;
+    width: 100%;
 }
 
-/* BOŞLUK DOLDURUCU */
-.header-spacer {
-    width: 120px;
-    /* Logo genişliği ile aynı */
-}
-
-/* HAMBURGER MENU */
+/* HAMBURGER BUTTON */
 .hamburger {
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 20px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1000;
+    padding: 0;
+    z-index: 1100;
 }
 
-/* MOBILE STYLES */
+.hamburger-line {
+    height: 3px;
+    background: var(--color-dark);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* RESPONSIVE MENU */
 @media (max-width: 992px) {
     .nav-menu {
         position: fixed;
-        top: 0;
-        left: -100%;
+        top: 80px;
+        left: 0;
         width: 100%;
-        height: 100vh;
-        background: white;
+        height: calc(100vh - 80px);
+        background: var(--color-white);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: left 0.4s ease-out;
-        padding: 2rem;
+        transform: translateX(-100%);
+        transition: transform var(--transition);
     }
 
     .nav-menu.active {
-        left: 0;
+        transform: translateX(0);
     }
 
     .nav-list {
@@ -137,18 +148,45 @@
     }
 
     .nav-link {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .hamburger {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 24px;
-        width: 30px;
     }
+}
 
-    .header-spacer {
-        display: none;
-    }
+.nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    color: var(--color-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--color-primary);
+    z-index: -1;
+    transition: width 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-link:hover {
+    color: var(--color-white);
+}
+
+.nav-link:hover::before {
+    width: 100%;
 }
