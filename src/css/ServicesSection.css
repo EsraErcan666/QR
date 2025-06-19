@@ -59,6 +59,26 @@
   overflow: hidden;
 }
 
+
+.service-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+  box-shadow 0.4s ease !important;
+
+}
+
+.service-card:hover {
+  transform: rotateY(360deg) translateY(-5px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* İçerik için ek ayar (opsiyonel) */
+.service-card > * {
+  transition: opacity 0.3s ease;
+  backface-visibility: hidden; /* Dönüş sırasında içerik kaymasını önler */
+}
+
 .service-card::before {
   content: '';
   position: absolute;
@@ -341,4 +361,4 @@
     width: 24px;
     height: 24px;
   }
-} 
+}
