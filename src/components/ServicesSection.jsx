@@ -2,8 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { QrCode, Smartphone, Globe, Shield, Zap, BarChart3, Users, Settings } from 'lucide-react';
 import '../css/ServicesSection.css';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate('/contact');
+  };
+
   const services = [
     {
       icon: <QrCode />,
@@ -155,6 +162,7 @@ const ServicesSection = () => {
               className="btn btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={handleStartClick}
             >
               Hemen Başlayın
             </motion.button>

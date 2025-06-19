@@ -49,6 +49,12 @@
     filter: brightness(1.2);
 }
 
+.logo:focus,
+.logo-image:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 /* NAVIGATION (DESKTOP) */
 .nav-menu {
     flex: 2;

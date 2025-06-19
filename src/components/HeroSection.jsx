@@ -2,8 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { QrCode, Globe, Zap, Shield } from 'lucide-react';
 import '../css/HeroSection.css';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -43,7 +50,7 @@ const HeroSection = () => {
         </div>
 
         {/* Main Content */}
-        <div className="hero-content">
+        <div className="hero-content" style={{ position: 'relative', zIndex: 2 }}>
           <motion.div
             className="hero-text"
             initial={{ opacity: 0, y: 50 }}
@@ -76,15 +83,15 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="hero-buttons">
+            <div className="hero-buttons" style={{ position: 'relative', zIndex: 2 }}>
               <motion.button
                 className="btn btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={handleStartClick}
               >
                 Hemen Başlayın
               </motion.button>
-             
             </div>
           </motion.div>
 
