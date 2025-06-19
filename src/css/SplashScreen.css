@@ -4,11 +4,65 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color:#ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  overflow: hidden;
+}
+
+.splash-qr-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floating-qr {
+  position: absolute;
+  color: rgba(0,0,0,0.04);
+  animation: qrFloat 7s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+.floating-qr-topleft {
+  top: 3%;
+  left: 2%;
+  animation-delay: 0s;
+}
+.floating-qr-topright {
+  top: 4%;
+  right: 3%;
+  animation-delay: 2s;
+}
+.floating-qr-bottomleft {
+  bottom: 4%;
+  left: 2%;
+  animation-delay: 3.5s;
+}
+.floating-qr-bottomright {
+  bottom: 3%;
+  right: 2%;
+  animation-delay: 1.5s;
+}
+.floating-qr-sideleft {
+  top: 45%;
+  left: 0.5%;
+  animation-delay: 1s;
+}
+.floating-qr-sideright {
+  top: 50%;
+  right: 0.5%;
+  animation-delay: 2.5s;
+}
+
+@keyframes qrFloat {
+  0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+  50% { transform: translateY(-8px) scale(1.04) rotate(8deg); }
 }
 
 .splash-screen.exit {
@@ -19,20 +73,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
 }
 
 .splash-logo {
-  width: 250px;
+  width: 220px;
   height: auto;
 }
 
+.animated-logo {
+  animation: logoPulse 2.2s infinite cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  20% { transform: scale(1.06) rotate(-3deg); }
+  50% { transform: scale(1.12) rotate(2deg); }
+  80% { transform: scale(1.06) rotate(-2deg); }
+}
+
 .loading-bar {
-  width: 250px;
-  height: 4px;
-  background-color: #f0f0f0;
-  border-radius: 2px;
+  width: 300px;
+  height: 10px;
+  background-color: #f0e6fa;
+  border-radius: 3px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(160, 80, 200, 0.08);
 }
 
 .loading-progress {
@@ -42,6 +110,23 @@
   background-size: 200% 100%;
   animation: loading 2s ease-in-out, gradientMove 3s linear infinite;
   transform-origin: left;
+}
+
+.animated-progress {
+  position: relative;
+}
+.animated-progress::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; height: 100%; width: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.3) 100%);
+  animation: shimmer 1.2s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 @keyframes loading {
