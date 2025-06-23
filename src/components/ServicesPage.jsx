@@ -2,44 +2,38 @@ import React, { useState } from 'react';
 import { ArrowDown, ArrowUp } from 'lucide-react';
 import '../css/ServicePage.css';
 import logoPng from '../assets/logo.png';
-import logoJpeg from '../assets/logo2.jpeg';
+import eylul from '../assets/5eylül.png';
+import gaveciali from '../assets/gaveciali.png';
+import makaratavuk from '../assets/makaratavuk.png';
+import ondokuzayvalik from '../assets/ondokuzayvalik.png';
+import wooplounge from '../assets/woop.png';
 
 // Örnek KOBİ verisi
 const kobiler = [
   {
-    name: 'Kafe Mavi',
-    image: logoPng,
-    menuUrl: 'https://kafemavi-qr.com',
+    name: 'On Dokuz Ayvalık',
+    image: ondokuzayvalik,
+    menuUrl: 'http://qreatione.com/ondokuz',
   },
   {
-    name: 'Kafe Mavi',
-    image: logoPng,
-    menuUrl: 'https://kafemavi-qr.com',
+    name: 'Gaveci Ali',
+    image: gaveciali,
+    menuUrl: 'http://qreatione.com/gaveciali',
   },
   {
-    name: 'Beyaz Fırın',
-    image: logoJpeg,
-    menuUrl: 'https://beyazfirin-qr.com',
+    name: 'Makara Tavuk',
+    image: makaratavuk,
+    menuUrl: 'http://qreatione.com/makaratavuk',
   },
   {
-    name: 'Yeşil Restoran',
-    image: logoPng,
-    menuUrl: 'https://yesilrestoran-qr.com',
+    name: 'Woop Lounge',
+    image: wooplounge,
+    menuUrl: 'http://qreatione.com/wooplounge',
   },
   {
-    name: 'Tatlı Dükkanı',
-    image: logoJpeg,
-    menuUrl: 'https://tatlidukkani-qr.com',
-  },
-  {
-    name: 'Kırmızı Büfe',
-    image: logoPng,
-    menuUrl: 'https://kirmizibufe-qr.com',
-  },
-  {
-    name: 'Mor Pastane',
-    image: logoJpeg,
-    menuUrl: 'https://morpastane-qr.com',
+    name: 'Beş Eylül Sosyal Tesisleri',
+    image: eylul,
+    menuUrl: 'http://qreatione.com/beseylulsosyaltesisleri',
   },
 ];
 
@@ -76,4 +70,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage; 
+export default ServicesPage;

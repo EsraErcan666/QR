@@ -1,8 +1,36 @@
 /* İşbirlikleri (collab) bölümü */
 .collab-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #fff;
   padding: 40px 0;
   min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+.collab-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle at 70% 30%, #764ba2 0%, #fff0 70%);
+  filter: blur(60px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+.collab-section::after {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle at 30% 70%, #ffd700 0%, #fff0 70%);
+  filter: blur(60px);
+  opacity: 0.38;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .collab-grid {
@@ -11,29 +39,32 @@
   gap: 2rem;
   margin: 0 auto 2rem auto;
   max-width: 900px;
+  position: relative;
+  z-index: 1;
 }
 
 .collab-card {
-  background: rgba(255,255,255,0.12);
+  background: linear-gradient(135deg, #9b79de 80%, #bba0e3 100%);
   border-radius: 20px;
   box-shadow: 0 4px 16px rgba(30,30,47,0.10);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 28px 18px 18px 18px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1.5px solid rgba(255,255,255,0.18);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  border: 1.5px solid #fff3;
   backdrop-filter: blur(6px);
 }
 .collab-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 8px 32px rgba(30,30,47,0.18);
+  background: linear-gradient(135deg, #bba0e3 80%, #9b79de 100%);
 }
 
 .collab-img {
-  width: 72px;
-  height: 72px;
-  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
   border-radius: 50%;
   margin-bottom: 16px;
   border: 2.5px solid #ffd700;
@@ -48,6 +79,7 @@
   margin-top: 8px;
   transition: color 0.2s;
   text-align: center;
+  text-shadow: 0 1px 8px #1e1e2f33;
 }
 .collab-link:hover {
   color: #fff;
@@ -68,6 +100,8 @@
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.18);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
 }
 .collab-showmore-btn:hover {
   background: linear-gradient(45deg, #ffed4e, #ffd700);
@@ -75,12 +109,14 @@
 }
 
 .section-title {
-  color: white;
+  color: #764ba2;
   text-align: center;
   margin-bottom: 24px;
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 600px) {
