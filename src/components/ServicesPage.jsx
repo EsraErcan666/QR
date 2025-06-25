@@ -7,6 +7,7 @@ import gaveciali from '../assets/gaveciali.png';
 import makaratavuk from '../assets/makaratavuk.png';
 import ondokuzayvalik from '../assets/ondokuzayvalik.png';
 import wooplounge from '../assets/woop.png';
+import tostcu from '../assets/SehrinTostcusu.png';
 
 // Örnek KOBİ verisi
 const kobiler = [
@@ -35,6 +36,12 @@ const kobiler = [
     image: eylul,
     menuUrl: 'http://qreatione.com/beseylulsosyaltesisleri',
   },
+  {
+    name: 'Sehrin Tostçusu',
+    image: tostcu,
+    menuUrl: 'http://qreatione.com/sehrintostcusu',
+  },
+
 ];
 
 const MAX_VISIBLE = 6;

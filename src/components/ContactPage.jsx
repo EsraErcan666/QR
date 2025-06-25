@@ -1,55 +1,109 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../css/Contact.css";
 import { Mail, Phone, MessageCircle, MapPin, AtSign, Smartphone, User } from 'lucide-react';
 
 const ContactPage = () => {
+  // Form state'leri
+  const [form, setForm] = useState({
+    ad: "",
+    soyad: "",
+    telefon: "",
+    mail: "",
+    mesaj: ""
+  });
+  const [status, setStatus] = useState("");
+
+  // Input değişikliklerini yakala
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Form submit işlemi
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Gönderiliyor...");
+
+    try {
+      const response = await fetch("/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form)
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setStatus("Mesajınız başarıyla gönderildi!");
+        setForm({ ad: "", soyad: "", telefon: "", mail: "", mesaj: "" });
+      } else {
+        setStatus("Gönderilemedi: " + (data.message || "Bir hata oluştu."));
+      }
+    } catch (err) {
+      setStatus("Gönderilemedi: Sunucuya ulaşılamıyor.");
+    }
+  };
+
   return (
     <div className="contact">
       <div className="contact-container">
         <div className="main-container">
           <div className="form-side">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <h1>İşletmeniz İçin İletişime Geçin</h1>
               <div className="form-inputs">
                 <div className="contact-left">
                   <label>Ad</label>
                   <input
                     type="text"
-                    className="text-left"
+                    name="ad"
+                    value={form.ad}
+                    onChange={handleChange}
                     placeholder="Adınızı giriniz..."
+                    required
                   />
                   <label>Telefon Numarası</label>
                   <input
                     type="tel"
+                    name="telefon"
                     maxLength="11"
-                    className="number-left"
+                    value={form.telefon}
+                    onChange={handleChange}
                     placeholder="Telefon numaranızı giriniz..."
+                    required
                   />
                 </div>
                 <div className="contact-right">
                   <label>Soyad</label>
                   <input
                     type="text"
-                    className="text-right"
+                    name="soyad"
+                    value={form.soyad}
+                    onChange={handleChange}
                     placeholder="Soyadınızı giriniz..."
+                    required
                   />
                   <label>Mail</label>
                   <input
                     type="email"
-                    className="mail-right"
+                    name="mail"
+                    value={form.mail}
+                    onChange={handleChange}
                     placeholder="E-mail adresinizi giriniz..."
+                    required
                   />
                 </div>
               </div>
               <div className="message">
                 <textarea
-                  className="contact"
+                  name="mesaj"
+                  value={form.mesaj}
+                  onChange={handleChange}
                   cols="42"
                   rows="5"
                   placeholder=" Mesajınızı belirtiniz..."
+                  required
                 ></textarea>
-                <button type="button">İlet</button>
+                <button type="submit">İlet</button>
               </div>
+              {status && <div style={{ marginTop: 10, color: "#671ef8" }}>{status}</div>}
             </form>
           </div>
           <div className="icon-side">
