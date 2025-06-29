@@ -24,14 +24,6 @@ const SplashScreen = ({ onLoadingComplete }) => {
 
   return (
     <div className={`splash-screen ${isExiting ? 'exit' : ''}`}>
-      <div className="splash-qr-background">
-        <div className="floating-qr floating-qr-topleft"><QrCode size={38} /></div>
-        <div className="floating-qr floating-qr-topright"><QrCode size={32} /></div>
-        <div className="floating-qr floating-qr-bottomleft"><QrCode size={28} /></div>
-        <div className="floating-qr floating-qr-bottomright"><QrCode size={36} /></div>
-        <div className="floating-qr floating-qr-sideleft"><QrCode size={24} /></div>
-        <div className="floating-qr floating-qr-sideright"><QrCode size={24} /></div>
-      </div>
       <div className="splash-content">
         <img src={logo} alt="Logo" className="splash-logo animated-logo" />
         <div className="loading-bar">

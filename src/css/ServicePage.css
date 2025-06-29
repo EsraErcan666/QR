@@ -1,6 +1,6 @@
 /* İşbirlikleri (collab) bölümü */
 .collab-section {
-  background: #fff;
+  background: #f5f5f5;
   padding: 40px 0;
   min-height: 60vh;
   position: relative;
@@ -13,9 +13,9 @@
   right: -120px;
   width: 340px;
   height: 340px;
-  background: radial-gradient(circle at 70% 30%, #764ba2 0%, #fff0 70%);
+  background: radial-gradient(circle at 70% 30%, #888888 0%, #fff0 70%);
   filter: blur(60px);
-  opacity: 0.55;
+  opacity: 0.25;
   z-index: 0;
   pointer-events: none;
 }
@@ -26,9 +26,9 @@
   left: -120px;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle at 30% 70%, #ffd700 0%, #fff0 70%);
+  background: radial-gradient(circle at 30% 70%, #cccccc 0%, #fff0 70%);
   filter: blur(60px);
-  opacity: 0.38;
+  opacity: 0.18;
   z-index: 0;
   pointer-events: none;
 }
@@ -44,21 +44,21 @@
 }
 
 .collab-card {
-  background: linear-gradient(135deg, #9b79de 80%, #bba0e3 100%);
+  background: linear-gradient(135deg, #888888 80%, #cccccc 100%);
   border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(30,30,47,0.10);
+  box-shadow: 0 4px 16px rgba(34,34,34,0.10);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 28px 18px 18px 18px;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  border: 1.5px solid #fff3;
+  border: 1.5px solid #e0e0e0;
   backdrop-filter: blur(6px);
 }
 .collab-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(30,30,47,0.18);
-  background: linear-gradient(135deg, #bba0e3 80%, #9b79de 100%);
+  box-shadow: 0 8px 32px rgba(34,34,34,0.18);
+  background: linear-gradient(135deg, #cccccc 80%, #888888 100%);
 }
 
 .collab-img {
@@ -67,49 +67,49 @@
   object-fit: contain;
   border-radius: 50%;
   margin-bottom: 16px;
-  border: 2.5px solid #ffd700;
+  border: 2.5px solid #cccccc;
   background: #fff;
 }
 
 .collab-link {
-  color: #ffd700;
+  color: #888888;
   font-weight: 700;
   font-size: 1.1rem;
   text-decoration: none;
   margin-top: 8px;
   transition: color 0.2s;
   text-align: center;
-  text-shadow: 0 1px 8px #1e1e2f33;
+  text-shadow: 0 1px 8px #22222233;
 }
 .collab-link:hover {
-  color: #fff;
-  text-shadow: 0 0 8px #ffd70099;
+  color: #222222;
+  text-shadow: 0 0 8px #cccccc99;
 }
 
 .collab-showmore-btn {
   display: flex;
   align-items: center;
   margin: 0 auto;
-  background: linear-gradient(45deg, #ffd700, #ffed4e);
-  color: #1e1e2f;
+  background: linear-gradient(45deg, #222222, #888888);
+  color: #f5f5f5;
   font-weight: 600;
   font-size: 1rem;
   border: none;
   border-radius: 50px;
   padding: 0.7rem 1.8rem;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.18);
+  box-shadow: 0 4px 15px rgba(34, 34, 34, 0.12);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   position: relative;
   z-index: 1;
 }
 .collab-showmore-btn:hover {
-  background: linear-gradient(45deg, #ffed4e, #ffd700);
-  color: #764ba2;
+  background: linear-gradient(45deg, #888888, #222222);
+  color: #222222;
 }
 
 .section-title {
-  color: #764ba2;
+  color: #888888;
   text-align: center;
   margin-bottom: 24px;
   font-size: 2.2rem;

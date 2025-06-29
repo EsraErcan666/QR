@@ -1,7 +1,7 @@
 .contact {
   width: 100%;
   padding: 20px 0;
-  background-color: rgb(248, 248, 248);
+  background-color: #f5f5f5;
 }
 
 .contact-container {
@@ -11,40 +11,40 @@
   display: flex;
   gap: 50px;
   align-items: center;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 15px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: all 0.4s ease; 
 }
 
 
 .contact-container:hover {
-  background-color: #9b79de;
+  background-color: #222222;
 }
 
 .contact-container:hover h1,
 .contact-container:hover label,
 .contact-container:hover input,
 .contact-container:hover textarea {
-  color: white; 
+  color: #f5f5f5; 
 }
 
 .contact-container:hover input,
 .contact-container:hover textarea {
-  border-color: rgba(255,255,255,0.5); 
-  background-color: rgba(255,255,255,0.1); 
+  border-color: #888888; 
+  background-color: #333333; 
 }
 
 .contact-container:hover input::placeholder,
 .contact-container:hover textarea::placeholder {
-  color: rgba(255,255,255,0.7); 
+  color: #cccccc; 
 }
 
 .contact-container:hover button {
-  background-color: white;
-  color: #9b79de; 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background-color: #f5f5f5;
+  color: #222222; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
 }
 
 .contact-container form {
@@ -57,7 +57,7 @@
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: #222222;
   font-size: 2.2rem;
   transition: color 0.3s ease;
 }
@@ -113,7 +113,7 @@ h1 {
 
 label {
   font-weight: 600;
-  color: #34495e;
+  color: #333333;
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
@@ -122,18 +122,18 @@ input, textarea {
   width: 100%;
   padding: 5px 15px;
   height: 50px;
-  border: 2px solid #ecf0f1;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s;
   text-align: left;
-  background-color:  rgb(248, 248, 248);;
+  background-color:  #f5f5f5;
 }
 
 input::placeholder,
 textarea::placeholder {
   text-align: left;
-  color: #95a5a6;
+  color: #888888;
 }
 
 .contact-right input {
@@ -141,9 +141,9 @@ textarea::placeholder {
 }
 
 input:focus, textarea:focus {
-  border-color: #9b79de;
+  border-color: #888888;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(155, 121, 222, 0.2);
+  box-shadow: 0 0 0 3px rgba(136, 136, 136, 0.12);
 }
 
 textarea {
@@ -154,8 +154,8 @@ textarea {
 
 button {
   padding: 10px 50px;
-  background-color: #9b79de;
-  color: white;
+  background-color: #222222;
+  color: #f5f5f5;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -166,9 +166,10 @@ button {
 }
 
 button:hover {
-  background-color: #7e5bc5;
+  background-color: #888888;
+  color: #222222;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.10);
 }
 
 .image-container {
@@ -183,7 +184,7 @@ button:hover {
   max-height: 500px;
   border-radius: 10px;
   object-fit: contain;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 

@@ -1,7 +1,7 @@
 /* SERVICES SECTION */
 .services-section {
   padding: 6rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #f5f5f5 0%, #cccccc 100%);
   position: relative;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(45deg, #222222, #888888);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -34,7 +34,7 @@
 
 .section-description {
   font-size: 1.25rem;
-  color: #64748b;
+  color: #888888;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -49,12 +49,12 @@
 }
 
 .service-card {
-  background: white;
+  background: #f5f5f5;
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
   position: relative;
   overflow: hidden;
 }
@@ -104,7 +104,7 @@
 .service-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(45deg, #222222, #888888);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -112,7 +112,7 @@
   margin-bottom: 1.5rem;
   color: white;
   font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(95, 39, 205, 0.3);
+  box-shadow: 0 4px 12px rgba(34, 34, 34, 0.18);
 }
 
 .service-icon svg {
@@ -130,7 +130,7 @@
 }
 
 .service-description {
-  color: #64748b;
+  color: #888888;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 1rem;
@@ -155,14 +155,14 @@
 .feature-dot {
   width: 8px;
   height: 8px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(45deg, #222222, #888888);
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 /* CTA Section */
 .services-cta {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, #222222, #888888);
   border-radius: 20px;
   padding: 3rem;
   text-align: center;

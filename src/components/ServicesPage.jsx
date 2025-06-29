@@ -53,16 +53,16 @@ const ServicesPage = () => {
   return (
     <section className="collab-section">
       <div className="container">
-        <h1 className="section-title">
+        <h1 className="section-title" style={{ color: '#111' }}>
           İş Birliklerimiz
         </h1>
         <div className="collab-grid">
           {visibleKobiler.map((kobi, idx) => (
             <div className="collab-card" key={kobi.name + idx}>
               <img src={kobi.image} alt={kobi.name} className="collab-img" />
-              <a href={kobi.menuUrl} target="_blank" rel="noopener noreferrer" className="collab-link">
+              <div className="collab-link" style={{ color: '#111', textDecoration: 'none', cursor: 'default', pointerEvents: 'none' }}>
                 {kobi.name}
-              </a>
+              </div>
             </div>
           ))}
         </div>
