@@ -17,16 +17,16 @@ app.post("/send-email", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "esraercan888@gmail.com", // Gönderen Gmail adresi
-      pass: "pycv hofr ykuo unau" // Gmail uygulama şifresi
+      user: "qreationel@qreatione.com", // Gönderen Gmail adresi
+      pass: "xilh khnx bvmc bpev" // Gmail uygulama şifresi
     }
   });
 
   const mailOptions = {
-    from: "esraercan888@gmail.com",
-    to: "esraercan888@gmail.com",
+    from: mail,
+    to: "qreationel@qreatione.com",
     replyTo: mail,
-    subject: "Yeni İletişim Formu Mesajı",
+    subject: "Yeni İletişim Formu Mesajınız",
     html: `
       <h2>Yeni İletişim Formu Mesajınız;</h2>
       <p><b>Ad:</b> ${ad}</p>

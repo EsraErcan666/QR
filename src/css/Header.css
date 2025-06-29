@@ -3,14 +3,14 @@
     --color-secondary: #888888;
     --color-dark: #111111;
     --color-light: #f5f5f5;
-    --color-white: #ffffff;
+    --color-white: #e8e8e8;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
     --transition: all 0.3s ease;
 }
 
 /* HEADER GENEL YAPI */
 .header {
-    background: linear-gradient(135deg, var(--color-white) 0%, var(--color-light) 100%);
+    background: linear-gradient(135deg, var(--color-white) 0%);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     position: sticky;
@@ -41,12 +41,10 @@
 .logo-image {
     height: 100px;
     transition: transform var(--transition);
-    filter: brightness(1.1);
 }
 
 .logo-image:hover {
     transform: scale(1.05);
-    filter: brightness(1.2);
 }
 
 .logo:focus,
