@@ -139,11 +139,6 @@ const Footer = () => {
         >
           <div className="footer-bottom-content">
             <p>&copy; {currentYear} QR Hosting. Tüm hakları saklıdır.</p>
-            <div className="footer-bottom-links">
-              <a href="/privacy">Gizlilik Politikası</a>
-              <a href="/terms">Kullanım Şartları</a>
-              <a href="/cookies">Çerez Politikası</a>
-            </div>
           </div>
         </motion.div>
       </div>
