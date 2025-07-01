@@ -16,6 +16,7 @@
   padding: 40px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   transition: all 0.4s ease; 
+  position: relative;
 }
 
 
@@ -209,8 +210,8 @@ button:hover {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(155, 121, 222, 0.10);
-  box-shadow: 0 2px 16px 0 rgba(155,121,222,0.08);
+  background: rgba(136, 136, 136, 0.10);
+  box-shadow: 0 2px 16px 0 rgba(136,136,136,0.08);
   transition: background 0.3s;
   opacity: 0;
 }
@@ -398,11 +399,49 @@ button:hover {
 
 .comm-icon-glow {
   color: #888888;
-  filter: drop-shadow(0 0 8px #b1acba) drop-shadow(0 0 2px #fff6);
+  filter: drop-shadow(0 0 8px #b1b1b1) drop-shadow(0 0 2px #fff6);
   opacity: 0.85;
 }
 
 @media (max-width: 900px) {
+  .main-container {
+    position: relative;
+  }
+  .mobile-bg-bubbles {
+    display: none !important;
+  }
+  .desktop-bubbles {
+    display: none !important;
+  }
+  .main-container > *,
+  .form-side,
+  .icon-side,
+  form,
+  .form-inputs,
+  .contact-left,
+  .contact-right,
+  .message,
+  input,
+  textarea,
+  button,
+  h1 {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+  }
+  .form-side {
+    position: relative;
+  }
+  form {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+  }
+  .form-inputs, .contact-left, .contact-right, .message, input, textarea, button {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+  }
   .main-container {
     grid-template-columns: 1fr;
   }
@@ -414,4 +453,60 @@ button:hover {
   .contact-comm-visual-bubble {
     height: 180px;
   }
+  .form-inputs {
+    flex-direction: column;
+    gap: 0;
+  }
+  .contact-left, .contact-right {
+    gap: 0;
+  }
+  .comm-bubble {
+    opacity: 0.5;
+    animation-name: none !important;
+  }
+  .comm-bubble-1 { animation: bubbleRise1 7s linear infinite !important; animation-delay: 0s; }
+  .comm-bubble-2 { animation: bubbleRise2 8s linear infinite !important; animation-delay: 2s; }
+  .comm-bubble-3 { animation: bubbleRise3 7.5s linear infinite !important; animation-delay: 1s; }
+  .comm-bubble-4 { animation: bubbleRise4 6.5s linear infinite !important; animation-delay: 3s; }
+  .comm-bubble-5 { animation: bubbleRise5 7.8s linear infinite !important; animation-delay: 1.5s; }
+  .comm-bubble-6 { animation: bubbleRise6 8.2s linear infinite !important; animation-delay: 4s; }
+  .comm-bubble-7 { animation: bubbleRise7 6.9s linear infinite !important; animation-delay: 2.5s; }
+  .comm-bubble-8 { animation: bubbleRise8 7.3s linear infinite !important; animation-delay: 3.2s; }
+  .comm-bubble-9 { animation: bubbleRise9 7.6s linear infinite !important; animation-delay: 2.2s; }
+  .comm-bubble-10 { animation: bubbleRise10 8.5s linear infinite !important; animation-delay: 5s; }
+  .comm-bubble-11 { animation: bubbleRise11 7.2s linear infinite !important; animation-delay: 2.7s; }
+  .comm-bubble-12 { animation: bubbleRise12 6.8s linear infinite !important; animation-delay: 1.8s; }
+  .comm-bubble-13 { animation: bubbleRise13 8.1s linear infinite !important; animation-delay: 3.5s; }
+  .comm-bubble-14 { animation: bubbleRise14 7.6s linear infinite !important; animation-delay: 4.1s; }
+  .comm-bubble-15 { animation: bubbleRise15 8.7s linear infinite !important; animation-delay: 5.2s; }
+}
+
+@media (min-width: 901px) {
+  .mobile-bg-bubbles {
+    display: none !important;
+  }
+  .desktop-bubbles {
+    display: block;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-bg-bubbles {
+    display: none !important;
+  }
+  .desktop-bubbles {
+    display: block;
+  }
+}
+
+.icon-side.desktop-bubbles {
+  position: relative;
+}
+
+.icon-side.desktop-bubbles .contact-comm-visual-bubble {
+  position: absolute;
+  top: 0;
+  left:20px;
+  width: 100%;
+  height: 100%;
 }

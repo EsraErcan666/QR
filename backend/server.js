@@ -1,6 +1,8 @@
 import express from "express";
 import nodemailer from "nodemailer";
 import cors from "cors";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const app = express();
 const PORT = 5001;
@@ -44,6 +46,13 @@ app.post("/send-email", async (req, res) => {
     console.error("E-posta gönderme hatası:", error);
     res.status(500).json({ message: "E-posta gönderilemedi.", error });
   }
+});
+
+// SPA fallback: Bilinmeyen tüm GET isteklerini index.html'e yönlendir
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../index.html"));
 });
 
 app.listen(PORT, () => {
