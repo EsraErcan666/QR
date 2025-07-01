@@ -1,7 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { QrCode, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import '../css/Footer.css';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  QrCode,
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import "../css/Footer.css";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -24,14 +34,16 @@ const Footer = () => {
               <h3>QR Hosting</h3>
             </div>
             <p className="footer-description">
-              İşletmenizi dijital dünyaya taşıyan modern QR hosting çözümleri. 
+              İşletmenizi dijital dünyaya taşıyan modern QR hosting çözümleri.
               Güvenli, hızlı ve profesyonel hizmet.
             </p>
-            <div className="social-links">   
-              <a href="https://www.instagram.com/qreatione" className="social-link">
+            <div className="social-links">
+              <a
+                href="https://www.instagram.com/qreatione"
+                className="social-link"
+              >
                 <Instagram size={20} />
               </a>
- 
             </div>
           </motion.div>
 
@@ -45,9 +57,31 @@ const Footer = () => {
           >
             <h4>Hızlı Linkler</h4>
             <ul className="footer-links">
-              <li><a href="/">Ana Sayfa</a></li>
-              <li><a href="/services">İş Birlikleri</a></li>
-              <li><a href="/contact">İletişim</a></li>
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                  end
+                >
+                  Ana Sayfa
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  İş Birlikleri
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  İletişim
+                </NavLink>
+              </li>
             </ul>
           </motion.div>
 
@@ -83,7 +117,7 @@ const Footer = () => {
                 <Mail size={18} />
                 <span>qreationel@qreatione.com</span>
               </div>
-             {/*<div className="contact-item">
+              {/*<div className="contact-item">
                 <Phone size={18} />
                 <span></span>
               </div>*/}
@@ -117,4 +151,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
