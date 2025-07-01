@@ -109,13 +109,6 @@ const HeroSection = () => {
                   <p>Menü & Sipariş</p>
                 </div>
               </div>
-              <div className="qr-card">
-                <QrCode size={120} className="qr-icon" />
-                <div className="qr-info">
-                  <h3>Mağaza QR</h3>
-                  <p>Ürün & Fiyat</p>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -124,4 +117,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection; 
+export default HeroSection;

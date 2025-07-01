@@ -31,20 +31,12 @@ const Footer = () => {
           >
             <div className="footer-logo">
               <QrCode size={40} />
-              <h3>QR Hosting</h3>
+              <h3>QREATIONE</h3>
             </div>
             <p className="footer-description">
               İşletmenizi dijital dünyaya taşıyan modern QR hosting çözümleri.
               Güvenli, hızlı ve profesyonel hizmet.
             </p>
-            <div className="social-links">
-              <a
-                href="https://www.instagram.com/qreatione"
-                className="social-link"
-              >
-                <Instagram size={20} />
-              </a>
-            </div>
           </motion.div>
 
           {/* Quick Links */}
@@ -125,6 +117,14 @@ const Footer = () => {
                 <MapPin size={18} />
                 <span>Balıkesir, Türkiye</span>
               </div>
+              <div className="contact-item">
+                <a
+                  href="https://www.instagram.com/qreatione"
+                  
+                >
+                  <Instagram size={20} />
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -138,7 +138,8 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} QR Hosting. Tüm hakları saklıdır.</p>
+            <p>&copy; {currentYear} QREATIONE</p>
+            <p>Tüm hakları saklıdır</p>
           </div>
         </motion.div>
       </div>

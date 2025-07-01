@@ -156,7 +156,7 @@ const ServicesSection = () => {
           </div>
 
           <div className="cta-content">
-            <h3>Hemen Başlayın</h3>
+            <h3>QREATIONE</h3>
             <p>Yaratıcı editörlerden, yaratıcı işletmelere değer katan dokunuşlar.</p>
             <motion.button
               className="btn btn-primary"
@@ -173,4 +173,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection; 
+export default ServicesSection;

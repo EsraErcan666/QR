@@ -5,12 +5,17 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
-const PORT = 5001;
+const PORT = process.env.PORT || 5001; 
 
-// CORS ayarı (gerekirse frontend portunu ekle)
-app.use(cors());
+
+const corsOptions = {
+  origin: ['https://www.qreatione.com.tr', 'https://qreatione.com.tr'],
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
+// E-posta gönderme endpoint'i
 app.post("/send-email", async (req, res) => {
   const { ad, soyad, telefon, mail, mesaj } = req.body;
   console.log("POST /send-email endpoint called");
@@ -50,11 +55,11 @@ app.post("/send-email", async (req, res) => {
 
 // SPA fallback: Bilinmeyen tüm GET isteklerini index.html'e yönlendir
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const _dirname = path.dirname(_filename);
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../index.html"));
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-}); 
+});

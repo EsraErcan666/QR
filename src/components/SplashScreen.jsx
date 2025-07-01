@@ -26,9 +26,9 @@ const SplashScreen = ({ onLoadingComplete }) => {
     <div className={`splash-screen ${isExiting ? 'exit' : ''}`}>
       <div className="splash-content">
         <img src={logo} alt="Logo" className="splash-logo animated-logo" />
-        <div className="loading-bar">
+        {/* <div className="loading-bar">
           <div className="loading-progress animated-progress"></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -95,10 +95,14 @@
   animation-delay: 3.5s;
 }
 
-
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
 }
 
 /* Main Content */
@@ -118,11 +122,8 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  margin-right:80px;
-  text-shadow:
-    0 2px 8px #222a,
-    0 1px 12px #e0e0e0,
-    0 0px 1px #bdbdbd;
+  margin-right: 80px;
+  text-shadow: 0 2px 8px #222a, 0 1px 12px #e0e0e0, 0 0px 1px #bdbdbd;
   color: #fff;
 }
 
@@ -131,9 +132,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow:
-    0 2px 8px rgba(34, 34, 34, 0.404),
-    0 1px 12px #e0e0e0,
+  text-shadow: 0 2px 8px rgba(34, 34, 34, 0.404), 0 1px 12px #e0e0e0,
     0 0px 1px #bdbdbd;
 }
 
@@ -170,7 +169,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.feature-item span{
+.feature-item span {
   color: #cccccc;
 }
 
@@ -188,6 +187,8 @@
 /* Buttons */
 .hero-buttons {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -371,7 +372,7 @@
     width: 100%;
   }
   .hero-description {
-    font-size: 0.90rem;
+    font-size: 0.9rem;
     padding-right: 1rem;
     padding-left: 1rem;
   }
