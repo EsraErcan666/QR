@@ -47,7 +47,8 @@ const CursorTrail = () => {
                 const ageRatio = 1 - (now - p1.time) / lifeSpan;
                 const opacity = Math.max(0, ageRatio);
 
-                ctx.strokeStyle = `rgba(144, 238, 144, ${opacity})`; // Fıstık yeşili (light green)
+                ctx.strokeStyle = `rgba(220, 220, 220, ${opacity})`; // Açık gri-beyaz çizgi
+
                 ctx.shadowColor = `rgba(255, 255, 255, ${opacity * 0.3})`;
                 ctx.shadowBlur = 8;
                 ctx.lineWidth = 2;
