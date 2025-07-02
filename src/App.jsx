@@ -8,7 +8,10 @@ import Footer from './components/Footer'
 import ServicesPage from './components/ServicesPage'
 import ContactPage from './components/ContactPage'
 import ScrollToTop from './components/ScrollToTop'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'
+
+// 💫 Eklenen bileşen:
+import CursorTrail from './components/CursorTrail'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,26 +21,30 @@ function App() {
   };
 
   return (
-    <>
-      {isLoading && <SplashScreen onLoadingComplete={handleLoadingComplete} />}
-      <div className="app">
-        <Header />
-        <ScrollToTop />
-        <main>
-          <Routes>
-            <Route path="/" element={
-              <>
-                <HeroSection />
-                <ServicesSection />
-              </>
-            } />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </>
+      <>
+        {isLoading && <SplashScreen onLoadingComplete={handleLoadingComplete} />}
+
+        {/* 💫 Parıltılı imleç burada her zaman çalışır */}
+        <CursorTrail />
+
+        <div className="app">
+          <Header />
+          <ScrollToTop />
+          <main>
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <HeroSection />
+                  <ServicesSection />
+                </>
+              } />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </>
   )
 }
 
