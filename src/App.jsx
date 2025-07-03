@@ -32,7 +32,7 @@ function App() {
           <Header />
           <ScrollToTop />
 
-          <main>
+          <man>
             <Routes>
               <Route
                   path="/"
@@ -46,7 +46,7 @@ function App() {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
-          </main>
+          </man>
 
           <Footer />
         </div>
