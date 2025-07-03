@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './components/Header'
-import SplashScreen from './components/SplashScreen'
-import HeroSection from './components/HeroSection'
-import ServicesSection from './components/ServicesSection'
-import Footer from './components/Footer'
-import ServicesPage from './components/ServicesPage'
-import ContactPage from './components/ContactPage'
-import ScrollToTop from './components/ScrollToTop'
-import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react';
+import './App.css';
 
-// 💫 Eklenen bileşen:
-import CursorTrail from './components/CursorTrail'
+import Header from './components/Header';
+import SplashScreen from './components/SplashScreen';
+import HeroSection from './components/HeroSection';
+import ServicesSection from './components/ServicesSection';
+import Footer from './components/Footer';
+import ServicesPage from './components/ServicesPage';
+import ContactPage from './components/ContactPage';
+import ScrollToTop from './components/ScrollToTop';
+import { Routes, Route } from 'react-router-dom';
+
+// 💫 Parlak imleç efekti bileşeni
+import CursorTrail from './components/CursorTrail';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,28 +25,33 @@ function App() {
       <>
         {isLoading && <SplashScreen onLoadingComplete={handleLoadingComplete} />}
 
-        {/* 💫 Parıltılı imleç burada her zaman çalışır */}
+        {/* 💫 Her sayfada çalışan parıltılı imleç */}
         <CursorTrail />
 
         <div className="app">
           <Header />
           <ScrollToTop />
+
           <main>
             <Routes>
-              <Route path="/" element={
-                <>
-                  <HeroSection />
-                  <ServicesSection />
-                </>
-              } />
+              <Route
+                  path="/"
+                  element={
+                    <>
+                      <HeroSection />
+                      <ServicesSection />
+                    </>
+                  }
+              />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </main>
+
           <Footer />
         </div>
       </>
-  )
+  );
 }
 
-export default App
+export default App;
