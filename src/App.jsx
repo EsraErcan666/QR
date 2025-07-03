@@ -9,34 +9,48 @@ import ServicesPage from './components/ServicesPage'
 import ContactPage from './components/ContactPage'
 import ScrollToTop from './components/ScrollToTop'
 import { Routes, Route } from 'react-router-dom';
+import CursorTrail from './components/CursorTrail';
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
+  // Modal açma fonksiyonu
+  const openContactModal = () => setContactModalOpen(true);
+  // Modal kapama fonksiyonu
+  const closeContactModal = () => setContactModalOpen(false);
+
   return (
     <>
       {isLoading && <SplashScreen onLoadingComplete={handleLoadingComplete} />}
-      <div className="app">
+    <CursorTrail />
+      <div className={`app${contactModalOpen ? ' blurred' : ''}`}>
         <Header />
         <ScrollToTop />
         <main>
           <Routes>
             <Route path="/" element={
               <>
-                <HeroSection />
-                <ServicesSection />
+                <HeroSection onJoinClick={openContactModal} />
+                <ServicesSection onJoinClick={openContactModal} />
+                <ServicesPage />
               </>
             } />
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
         <Footer />
       </div>
+      {contactModalOpen && (
+        <div className="modal-overlay">
+          <ContactPage onClose={closeContactModal} />
+        </div>
+      )}
     </>
   )
 }

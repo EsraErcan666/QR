@@ -35,7 +35,6 @@ const Footer = () => {
             </div>
             <p className="footer-description">
               İşletmenizi dijital dünyaya taşıyan modern QR hosting çözümleri.
-              Güvenli, hızlı ve profesyonel hizmet.
             </p>
           </motion.div>
 
@@ -138,8 +137,8 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} QREATIONE</p>
-            <p>Tüm hakları saklıdır</p>
+            <p>&copy; {currentYear} QREATIONE.</p>
+            <p>Tüm hakları saklıdır.</p>
           </div>
         </motion.div>
       </div>

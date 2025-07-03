@@ -126,6 +126,8 @@ input, textarea {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 1rem;
+  font-family: inherit;
+  font-weight: 400;
   transition: all 0.3s;
   text-align: left;
   background-color:  #f5f5f5;
@@ -431,11 +433,17 @@ button:hover {
   }
   .form-side {
     position: relative;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   form {
     position: relative;
     z-index: 2;
     background: transparent;
+    padding: 0 4px;
+    margin: 0;
   }
   .form-inputs, .contact-left, .contact-right, .message, input, textarea, button {
     position: relative;
@@ -455,10 +463,43 @@ button:hover {
   }
   .form-inputs {
     flex-direction: column;
-    gap: 0;
+    gap: 8px;
+    margin-bottom: 0;
   }
   .contact-left, .contact-right {
     gap: 0;
+  }
+  label {
+    font-size: 1rem;
+    margin-bottom: 2px;
+  }
+  input, textarea {
+    height: 32px;
+    font-size: 0.95rem;
+    padding: 3px 8px;
+    margin-bottom: 6px;
+  }
+  textarea {
+    min-height: 60px;
+    padding: 5px 8px;
+  }
+  button {
+    padding: 7px 0;
+    font-size: 0.98rem;
+    width: 100%;
+    align-self: stretch;
+    margin-top: 6px;
+  }
+  h1 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .contact-container {
+    padding: 10px 2px;
+    gap: 6px;
+  }
+  .message {
+    margin-bottom: 0;
   }
   .comm-bubble {
     opacity: 0.5;
