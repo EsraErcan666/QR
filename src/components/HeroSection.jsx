@@ -1,14 +1,15 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { QrCode, Globe, Zap, Shield } from 'lucide-react';
-import '../css/HeroSection.css';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import { QrCode, Globe, Zap, Shield } from "lucide-react";
+import "../css/HeroSection.css";
+import { useNavigate } from "react-router-dom";
+import logoImage from "../assets/logo.png";
 
-const HeroSection = () => {
+const HeroSection = ({ onJoinClick }) => {
   const navigate = useNavigate();
 
   const handleStartClick = () => {
-    navigate('/contact');
+    navigate("/contact");
   };
 
   return (
@@ -46,11 +47,13 @@ const HeroSection = () => {
           <div className="floating-qr floating-qr-10">
             <QrCode size={38} />
           </div>
-
         </div>
 
         {/* Main Content */}
-        <div className="hero-content" style={{ position: 'relative', zIndex: 2 }}>
+        <div
+          className="hero-content"
+          style={{ position: "relative", zIndex: 2 }}
+        >
           <motion.div
             className="hero-text"
             initial={{ opacity: 0, y: 50 }}
@@ -58,14 +61,17 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="hero-title">
-              <span className="gradient-text">QR ile</span> İşletmenizi
+              <span className="gradient-text" style={{ color: "white" }}>
+                QR ile
+              </span>{" "}
+              İşletmenizi
               <br />
               <span className="highlight">Dijital Dünyaya</span> Taşıyın
             </h1>
-            
+
             <p className="hero-description">
-              Modern QR kod teknolojisi ile işletmenizin dijital varlığını güçlendirin. 
-              Hızlı, güvenli ve profesyonel hosting çözümleri.
+              Modern QR kod teknolojisi ile işletmenizin dijital varlığını
+              güçlendirin. Hızlı, güvenli ve profesyonel hosting çözümleri.
             </p>
 
             <div className="hero-features">
@@ -83,12 +89,15 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="hero-buttons" style={{ position: 'relative', zIndex: 2 }}>
+            <div
+              className="hero-buttons"
+              style={{ position: "relative", zIndex: 2 }}
+            >
               <motion.button
                 className="btn btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={handleStartClick}
+                onClick={onJoinClick}
               >
                 Hemen Başlayın
               </motion.button>
@@ -103,7 +112,7 @@ const HeroSection = () => {
           >
             <div className="qr-showcase">
               <div className="qr-card">
-                <QrCode size={120} className="qr-icon" />
+              <QrCode size={120} className="qr-icon" />
                 <div className="qr-info">
                   <h3>Restoran QR</h3>
                   <p>Menü & Sipariş</p>

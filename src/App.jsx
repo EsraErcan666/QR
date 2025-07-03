@@ -1,57 +1,58 @@
-import { useState } from 'react';
-import './App.css';
-
-import Header from './components/Header';
-import SplashScreen from './components/SplashScreen';
-import HeroSection from './components/HeroSection';
-import ServicesSection from './components/ServicesSection';
-import Footer from './components/Footer';
-import ServicesPage from './components/ServicesPage';
-import ContactPage from './components/ContactPage';
-import ScrollToTop from './components/ScrollToTop';
+import { useState } from 'react'
+import './App.css'
+import Header from './components/Header'
+import SplashScreen from './components/SplashScreen'
+import HeroSection from './components/HeroSection'
+import ServicesSection from './components/ServicesSection'
+import Footer from './components/Footer'
+import ServicesPage from './components/ServicesPage'
+import ContactPage from './components/ContactPage'
+import ScrollToTop from './components/ScrollToTop'
 import { Routes, Route } from 'react-router-dom';
-
-// 💫 Parlak imleç efekti bileşeni
 import CursorTrail from './components/CursorTrail';
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
+  // Modal açma fonksiyonu
+  const openContactModal = () => setContactModalOpen(true);
+  // Modal kapama fonksiyonu
+  const closeContactModal = () => setContactModalOpen(false);
+
   return (
-      <>
-        {isLoading && <SplashScreen onLoadingComplete={handleLoadingComplete} />}
-
-        {/* 💫 Her sayfada çalışan parıltılı imleç */}
-        <CursorTrail />
-
-        <div className="app">
-          <Header />
-          <ScrollToTop />
-
-          <main>
-            <Routes>
-              <Route
-                  path="/"
-                  element={
-                    <>
-                      <HeroSection />
-                      <ServicesSection />
-                    </>
-                  }
-              />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </main>
-
-          <Footer />
+    <>
+      {isLoading && <SplashScreen onLoadingComplete={handleLoadingComplete} />}
+    <CursorTrail />
+      <div className={`app${contactModalOpen ? ' blurred' : ''}`}>
+        <Header />
+        <ScrollToTop />
+        <main>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <HeroSection onJoinClick={openContactModal} />
+                <ServicesSection onJoinClick={openContactModal} />
+                <ServicesPage />
+              </>
+            } />
+            <Route path="/services" element={<ServicesPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+      {contactModalOpen && (
+        <div className="modal-overlay">
+          <ContactPage onClose={closeContactModal} />
         </div>
-      </>
-  );
+      )}
+    </>
+  )
 }
 
-export default App;
+export default App

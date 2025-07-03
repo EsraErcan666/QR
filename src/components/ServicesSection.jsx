@@ -4,7 +4,7 @@ import { QrCode, Smartphone, Globe, Shield, Zap, BarChart3, Users, Settings } fr
 import '../css/ServicesSection.css';
 import { useNavigate } from 'react-router-dom';
 
-const ServicesSection = () => {
+const ServicesSection = ({ onJoinClick }) => {
   const navigate = useNavigate();
 
   const handleStartClick = () => {
@@ -82,7 +82,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
         >
           <h2 className="section-title">
-            <span className="gradient-text">QR Hosting</span> Hizmetlerimiz
+            <span className="gradient-text">QR Hosting Hizmetlerimiz</span> 
           </h2>
           <p className="section-description">
             İşletmenizi dijital dünyaya taşıyacak kapsamlı QR hosting çözümlerimiz
@@ -162,7 +162,7 @@ const ServicesSection = () => {
               className="btn btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleStartClick}
+              onClick={onJoinClick}
             >
               Hemen Başlayın
             </motion.button>

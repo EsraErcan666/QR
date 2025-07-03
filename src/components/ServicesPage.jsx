@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowDown, ArrowUp } from 'lucide-react';
 import '../css/ServicePage.css';
 import logoPng from '../assets/logo.png';
@@ -9,39 +9,13 @@ import ondokuzayvalik from '../assets/ondokuzayvalik.png';
 import wooplounge from '../assets/woop.png';
 import tostcu from '../assets/SehrinTostcusu.png';
 
-// Örnek KOBİ verisi
 const kobiler = [
-  {
-    name: 'On Dokuz Ayvalık',
-    image: ondokuzayvalik,
-    menuUrl: 'http://qreatione.com/ondokuz',
-  },
-  {
-    name: 'Gaveci Ali',
-    image: gaveciali,
-    menuUrl: 'http://qreatione.com/gaveciali',
-  },
-  {
-    name: 'Makara Tavuk',
-    image: makaratavuk,
-    menuUrl: 'http://qreatione.com/makaratavuk',
-  },
-  {
-    name: 'Woop Lounge',
-    image: wooplounge,
-    menuUrl: 'http://qreatione.com/wooplounge',
-  },
-  {
-    name: 'Beş Eylül Sosyal Tesisleri',
-    image: eylul,
-    menuUrl: 'http://qreatione.com/beseylulsosyaltesisleri',
-  },
-  {
-    name: 'Sehrin Tostçusu',
-    image: tostcu,
-    menuUrl: 'http://qreatione.com/sehrintostcusu',
-  },
-
+  { name: 'On Dokuz Ayvalık', image: ondokuzayvalik, menuUrl: '#' },
+  { name: 'Gaveci Ali', image: gaveciali, menuUrl: '#' },
+  { name: 'Makara Tavuk', image: makaratavuk, menuUrl: '#' },
+  { name: 'Woop Lounge', image: wooplounge, menuUrl: '#' },
+  { name: 'Beş Eylül Sosyal Tesisleri', image: eylul, menuUrl: '#' },
+  { name: 'Sehrin Tostçusu', image: tostcu, menuUrl: '#' },
 ];
 
 const MAX_VISIBLE = 6;
@@ -52,6 +26,18 @@ const ServicesPage = () => {
 
   return (
     <section className="collab-section">
+      <div className="logo-slider-container">
+        <div className="logo-slider-track">
+          {kobiler.concat(kobiler).map((kobi, index) => (
+            <img
+              key={index}
+              src={kobi.image}
+              alt={kobi.name}
+              className="slider-logo"
+            />
+          ))}
+        </div>
+      </div>
       <div className="container">
         <h1 className="section-title" style={{ color: '#111' }}>
           İş Birliklerimiz

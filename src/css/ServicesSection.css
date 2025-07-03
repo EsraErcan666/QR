@@ -26,15 +26,12 @@
 }
 
 .gradient-text {
-  background: linear-gradient(45deg, #222222, #888888);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #131212;
 }
 
 .section-description {
   font-size: 1.25rem;
-  color: #888888;
+  color: #131212;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -52,31 +49,28 @@
   background: #f5f5f5;
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08),
+              0 2px 4px -1px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
   border: 1px solid #e0e0e0;
   position: relative;
   overflow: hidden;
-}
-
-
-.service-card {
   transform-style: preserve-3d;
   perspective: 1000px;
-  transition: transform 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
-  box-shadow 0.4s ease !important;
-
 }
 
 .service-card:hover {
-  transform: rotateY(360deg) translateY(-5px) !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  transform: scale(1.03);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* İçerik için ek ayar (opsiyonel) */
 .service-card > * {
-  transition: opacity 0.3s ease;
-  backface-visibility: hidden; /* Dönüş sırasında içerik kaymasını önler */
+  transition: all 0.3s ease;
+}
+
+.service-card:hover > * {
+  transform: scale(1.05);
 }
 
 .service-card::before {
@@ -95,16 +89,11 @@
   transform: scaleX(1);
 }
 
-.service-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transform: translateY(-5px);
-}
-
 /* Service Icon */
 .service-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(45deg, #222222, #888888);
+  background: #737373;
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -148,7 +137,7 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
-  color: #475569;
+  color: #737373;
   font-size: 0.95rem;
 }
 
@@ -162,7 +151,7 @@
 
 /* CTA Section */
 .services-cta {
-  background: linear-gradient(135deg, #222222, #888888);
+  background-color: #000000;
   border-radius: 20px;
   padding: 3rem;
   text-align: center;
@@ -172,17 +161,9 @@
 }
 
 .services-cta::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
+  content: none;
 }
 
-/* Floating QR Codes in CTA */
 .cta-floating-qrs {
   position: absolute;
   top: 0;
@@ -199,55 +180,17 @@
   animation: ctaFloat 8s ease-in-out infinite;
 }
 
-.cta-qr-1 {
-  top: 20%;
-  left: 13%;
-  animation-delay: 0s;
-}
-
-.cta-qr-2 {
-  top: 70%;
-  right: 15%;
-  animation-delay: 2s;
-}
-
-.cta-qr-3 {
-  bottom: 20%;
-  left: 20%;
-  animation-delay: 4s;
-}
-
-.cta-qr-4 {
-  top: 25%;
-  right: 25%;
-  animation-delay: 1s;
-}
-
-.cta-qr-5 {
-  top: 60%;
-  left: 5%;
-  animation-delay: 3s;
-}
-.cta-qr-6 {
-  top: 20%;
-  left: 30%;
-  animation-delay: 5s;
-}
-.cta-qr-7 {
-  top: 20%;
-  right:10% ;
-  animation-delay: 1.5s;
-}
+.cta-qr-1 { top: 20%; left: 13%; animation-delay: 0s; }
+.cta-qr-2 { top: 70%; right: 15%; animation-delay: 2s; }
+.cta-qr-3 { bottom: 20%; left: 20%; animation-delay: 4s; }
+.cta-qr-4 { top: 25%; right: 25%; animation-delay: 1s; }
+.cta-qr-5 { top: 60%; left: 5%; animation-delay: 3s; }
+.cta-qr-6 { top: 20%; left: 30%; animation-delay: 5s; }
+.cta-qr-7 { top: 20%; right:10%; animation-delay: 1.5s; }
 
 @keyframes ctaFloat {
-  0%, 100% { 
-    transform: translateY(0px) rotate(0deg) scale(1); 
-    opacity: 0.15;
-  }
-  50% { 
-    transform: translateY(-15px) rotate(180deg) scale(1.1); 
-    opacity: 0.25;
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.15; }
+  50% { transform: translateY(-15px) rotate(180deg) scale(1.1); opacity: 0.25; }
 }
 
 .cta-content {
@@ -360,5 +303,59 @@
   .service-icon svg {
     width: 24px;
     height: 24px;
+  }
+}
+
+
+.logo-slider-container {
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #cccccc 100%);
+  padding: 4rem 1rem;
+  position: relative;
+  margin-bottom: 1rem;   /* Eskisi: 2rem */
+  margin-top: -4.5rem;     /* Yukarı taşımak için eklendi */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.logo-slider-track {
+  display: flex;
+  animation: slideLeft 40s linear infinite;
+  width: max-content;
+  align-items: center;
+}
+
+.slider-logo {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  border-radius: 50%; /* daire görünüm */
+  margin: 0 2rem;
+  flex-shrink: 0;
+  filter: grayscale(0.2);
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.slider-logo:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
