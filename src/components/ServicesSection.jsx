@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useRef, useLayoutEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { QrCode, Smartphone, Globe, Shield, Zap, BarChart3, Users, Settings } from 'lucide-react';
 import '../css/ServicesSection.css';
 import { useNavigate } from 'react-router-dom';
+import logoPng from '../assets/logo.png';
+import eylul from '../assets/5eylül.png';
+import gaveciali from '../assets/gaveciali.png';
+import makaratavuk from '../assets/makaratavuk.png';
+import ondokuzayvalik from '../assets/ondokuzayvalik.png';
+import wooplounge from '../assets/woop.png';
+import tostcu from '../assets/SehrinTostcusu.png';
 
 const ServicesSection = ({ onJoinClick }) => {
   const navigate = useNavigate();
@@ -46,6 +53,27 @@ const ServicesSection = ({ onJoinClick }) => {
     }
   ];
 
+  const kobiler = [
+    { name: 'On Dokuz Ayvalık', image: ondokuzayvalik },
+    { name: 'Gaveci Ali', image: gaveciali },
+    { name: 'Makara Tavuk', image: makaratavuk },
+    { name: 'Woop Lounge', image: wooplounge },
+    { name: 'Beş Eylül Sosyal Tesisleri', image: eylul },
+    { name: 'Sehrin Tostçusu', image: tostcu },
+  ];
+
+  // Slider'ın her zaman dolu olması için:
+  const containerRef = useRef(null);
+  const [repeatCount, setRepeatCount] = useState(2);
+  useLayoutEffect(() => {
+    if (containerRef.current) {
+      const logoWidth = 80 + 24; // logo genişliği + gap
+      const minLogoCount = Math.ceil(containerRef.current.offsetWidth / logoWidth) + 1;
+      setRepeatCount(Math.max(2, Math.ceil(minLogoCount / kobiler.length) * 2));
+    }
+  }, []);
+  const sliderLogos = Array(repeatCount).fill(kobiler).flat();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -80,9 +108,6 @@ const ServicesSection = ({ onJoinClick }) => {
           <h2 className="section-title">
             <span className="gradient-text">QR Hosting Hizmetlerimiz</span> 
           </h2>
-          <p className="section-description">
-            İşletmenizi dijital dünyaya taşıyacak kapsamlı QR hosting çözümlerimiz
-          </p>
         </motion.div>
 
         <motion.div
@@ -118,6 +143,20 @@ const ServicesSection = ({ onJoinClick }) => {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Logo Slider - 6 QR kartının hemen altında */}
+        <div className="logo-slider-container" ref={containerRef}>
+          <div className="logo-slider-track">
+            {[...Array(3)].flatMap(() => kobiler).map((kobi, index) => (
+              <img
+                key={index}
+                src={kobi.image}
+                alt={kobi.name}
+                className="slider-logo"
+              />
+            ))}
+          </div>
+        </div>
 
         <motion.div
           className="services-cta"

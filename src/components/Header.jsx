@@ -33,32 +33,30 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Menü - Orta */}
-        <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
-          <ul className="nav-list">
-            <li className="nav-item">
-              <Link
-                to="/"
-                className={`nav-link ${isActive("/") ? "active" : ""}`}
-                onClick={closeMenu}
-              >
-                Ana Sayfa
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/services"
-                className={`nav-link ${isActive("/services") ? "active" : ""}`}
-                onClick={closeMenu}
-              >
-                İş Birlikleri
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        {/* Hamburger - Sağ */}
+        {/* Hamburger ve Menü - Sağ */}
         <div className="header-right">
+          <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
+            <ul className="nav-list">
+              <li className="nav-item">
+                <Link
+                  to="/"
+                  className={`nav-link ${isActive("/") ? "active" : ""}`}
+                  onClick={closeMenu}
+                >
+                  Ana Sayfa
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/services"
+                  className={`nav-link ${isActive("/services") ? "active" : ""}`}
+                  onClick={closeMenu}
+                >
+                  İş Birlikleri
+                </Link>
+              </li>
+            </ul>
+          </nav>
           <button
             className={`hamburger ${isMenuOpen ? "open" : ""}`}
             onClick={toggleMenu}

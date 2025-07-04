@@ -164,6 +164,7 @@
   flex-wrap: wrap;
 }
 
+
 .feature-item {
   display: flex;
   align-items: center;
@@ -269,35 +270,55 @@
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 2rem; /* Padding'i küçülttük */
   text-align: center;
   color: white;
   transition: all 0.3s ease;
-  min-width: 280px;
+  width: 280px; /* Kart genişliğini küçülttük */
+  height: 360px; /* Kart yüksekliğini küçülttük */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .qr-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px); /* Hover efekti biraz küçültüldü */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.qr-icon {
-  color: #cccccc;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 0 10px rgba(3, 3, 2, 0.851));
+.qr-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem; /* Boşlukları küçülttük */
+}
+
+.logo2 {
+  max-width: 80%; /* Logo genişliğini küçülttük */
+  max-height: 180px; /* Logo yüksekliğini küçülttük */
+  object-fit: contain;
 }
 
 .qr-info h3 {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Başlık boyutunu küçülttük */
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0;
+  line-height: 1.2;
 }
 
 .qr-info p {
   opacity: 0.8;
-  font-size: 1rem;
+  font-size: 1rem; /* Açıklama boyutunu küçülttük */
+  margin: 0;
+  line-height: 1.3;
 }
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {

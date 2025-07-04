@@ -12,8 +12,9 @@ import {
 } from "lucide-react";
 import "../css/Footer.css";
 import { NavLink } from "react-router-dom";
+import logo3 from '../assets/logo3.png';
 
-const Footer = () => {
+const Footer = ({ onContactClick }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -30,7 +31,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="footer-logo">
-              <QrCode size={40} />
+              <img src={logo3} alt="Logo 3" style={{ width: 40, height: 40 }} />
               <h3>QREATIONE</h3>
             </div>
             <p className="footer-description">
@@ -66,12 +67,14 @@ const Footer = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) => (isActive ? "active" : "")}
+                <button
+                  type="button"
+                  className="footer-contact-btn"
+                  onClick={onContactClick}
+                  style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', padding: 0, font: 'inherit' }}
                 >
                   İletişim
-                </NavLink>
+                </button>
               </li>
             </ul>
           </motion.div>

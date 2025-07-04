@@ -4,6 +4,7 @@ import { QrCode, Globe, Zap, Shield } from "lucide-react";
 import "../css/HeroSection.css";
 import { useNavigate } from "react-router-dom";
 import logoImage from "../assets/logo.png";
+import home3 from "../assets/home3.png";
 
 const HeroSection = ({ onJoinClick }) => {
   const navigate = useNavigate();
@@ -112,10 +113,10 @@ const HeroSection = ({ onJoinClick }) => {
           >
             <div className="qr-showcase">
               <div className="qr-card">
-              <QrCode size={120} className="qr-icon" />
                 <div className="qr-info">
-                  <h3>Restoran QR</h3>
-                  <p>Menü & Sipariş</p>
+                <img src={home3} className="logo2" />
+                  <h3>Restoran Cafe Hotel</h3>
+                  <p>QR Menü & Sipariş</p>
                 </div>
               </div>
             </div>

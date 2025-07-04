@@ -43,7 +43,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
           </Routes>
         </main>
-        <Footer />
+        <Footer onContactClick={openContactModal} />
       </div>
       {contactModalOpen && (
         <div className="modal-overlay">
