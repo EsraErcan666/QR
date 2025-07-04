@@ -40,7 +40,7 @@ const ContactPage = ({ onClose }) => {
       setStatus("Gönderilemedi: Sunucuya ulaşılamıyor.");
     }
   };
-
+// denemeee
   return (
       <div className="contact">
         <button className="close-modal-btn" onClick={onClose} aria-label="Kapat">&times;</button>
