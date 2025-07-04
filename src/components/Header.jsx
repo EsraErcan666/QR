@@ -54,16 +54,6 @@ const Header = () => {
                 İş Birlikleri
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/contact"
-                className={`nav-link ${isActive("/contact") ? "active" : ""}`}
-                onClick={closeMenu}
-              >
-                İletişim
-              </Link>
-            </li>
-
           </ul>
         </nav>
 

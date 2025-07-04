@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "../css/Contact.css";
 import { Mail, Phone, MessageCircle, MapPin, AtSign, Smartphone, User } from 'lucide-react';
 
-const ContactPage = () => {
+const ContactPage = ({ onClose }) => {
   // Form state'leri
   const [form, setForm] = useState({
     ad: "",
@@ -43,6 +43,7 @@ const ContactPage = () => {
 
   return (
     <div className="contact">
+      <button className="close-modal-btn" onClick={onClose} aria-label="Kapat">&times;</button>
       <div className="contact-container">
         <div className="main-container">
           <div className="contact-comm-visual contact-comm-visual-bubble mobile-bg-bubbles">
