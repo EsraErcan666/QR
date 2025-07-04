@@ -126,11 +126,12 @@ input, textarea {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 1rem;
-  font-family: inherit;
-  font-weight: 400;
   transition: all 0.3s;
   text-align: left;
   background-color:  #f5f5f5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 input::placeholder,
@@ -433,17 +434,11 @@ button:hover {
   }
   .form-side {
     position: relative;
-    padding-right: 0;
-    padding-left: 0;
-    padding-top: 0;
-    padding-bottom: 0;
   }
   form {
     position: relative;
     z-index: 2;
     background: transparent;
-    padding: 0 4px;
-    margin: 0;
   }
   .form-inputs, .contact-left, .contact-right, .message, input, textarea, button {
     position: relative;
@@ -463,43 +458,10 @@ button:hover {
   }
   .form-inputs {
     flex-direction: column;
-    gap: 8px;
-    margin-bottom: 0;
+    gap: 0;
   }
   .contact-left, .contact-right {
     gap: 0;
-  }
-  label {
-    font-size: 1rem;
-    margin-bottom: 2px;
-  }
-  input, textarea {
-    height: 32px;
-    font-size: 0.95rem;
-    padding: 3px 8px;
-    margin-bottom: 6px;
-  }
-  textarea {
-    min-height: 60px;
-    padding: 5px 8px;
-  }
-  button {
-    padding: 7px 0;
-    font-size: 0.98rem;
-    width: 100%;
-    align-self: stretch;
-    margin-top: 6px;
-  }
-  h1 {
-    font-size: 1.1rem;
-    margin-bottom: 8px;
-  }
-  .contact-container {
-    padding: 10px 2px;
-    gap: 6px;
-  }
-  .message {
-    margin-bottom: 0;
   }
   .comm-bubble {
     opacity: 0.5;
@@ -550,4 +512,28 @@ button:hover {
   left:20px;
   width: 100%;
   height: 100%;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 1001;
+  font-size: 2.2rem;
+  background: rgba(34,34,34,0.18);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.close-modal-btn:hover {
+  background: rgba(34,34,34,0.38);
+  color: #fff;
 }

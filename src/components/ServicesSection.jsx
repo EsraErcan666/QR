@@ -7,10 +7,6 @@ import { useNavigate } from 'react-router-dom';
 const ServicesSection = ({ onJoinClick }) => {
   const navigate = useNavigate();
 
-  const handleStartClick = () => {
-    navigate('/contact');
-  };
-
   const services = [
     {
       icon: <QrCode />,
@@ -173,4 +169,4 @@ const ServicesSection = ({ onJoinClick }) => {
   );
 };
 
-export default ServicesSection;
+export default ServicesSection; 
