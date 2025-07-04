@@ -38,7 +38,6 @@ function App() {
               <>
                 <HeroSection onJoinClick={openContactModal} />
                 <ServicesSection onJoinClick={openContactModal} />
-                <ServicesPage />
               </>
             } />
             <Route path="/services" element={<ServicesPage />} />

@@ -4,7 +4,7 @@ import { QrCode, Smartphone, Globe, Shield, Zap, BarChart3, Users, Settings } fr
 import '../css/ServicesSection.css';
 import { useNavigate } from 'react-router-dom';
 
-const ServicesSection = ({ onJoinClick }) => {
+const ServicesSection = () => {
   const navigate = useNavigate();
 
   const handleStartClick = () => {
@@ -162,7 +162,7 @@ const ServicesSection = ({ onJoinClick }) => {
               className="btn btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={onJoinClick}
+              onClick={handleStartClick}
             >
               Hemen Başlayın
             </motion.button>
@@ -173,4 +173,4 @@ const ServicesSection = ({ onJoinClick }) => {
   );
 };
 
-export default ServicesSection;
+export default ServicesSection; 

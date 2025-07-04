@@ -6,6 +6,30 @@
   position: relative;
 }
 
+/* Tüm metinlerde text-shadow'u kaldır */
+.footer * {
+  text-shadow: none !important;
+}
+
+/* Özel olarak başlıklar ve logodaki text-shadow'u kaldır */
+.footer-section h4,
+.footer-logo h3 {
+  text-shadow: none !important;
+}
+
+/* Linklerdeki text-shadow'u kaldır */
+.footer-links a,
+.footer-bottom-links a {
+  text-shadow: none !important;
+}
+
+/* Contact bilgilerindeki text-shadow'u kaldır */
+.contact-item,
+.contact-item span {
+  text-shadow: none !important;
+}
+
+
 .footer::before {
   content: '';
   position: absolute;
@@ -37,7 +61,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #cccccc;
+  color: #ffffff;
 }
 
 /* Company Info Section */
@@ -107,7 +131,7 @@
 }
 
 .footer-links a {
-  color: #bbbbbb;
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
   position: relative;
@@ -134,7 +158,7 @@
 
 /* Services section - no links, just text */
 .footer-section:nth-child(3) .footer-links li {
-  color: #bbbbbb;
+  color: #ffffff;
   font-size: 0.95rem;
   transition: color 0.3s ease;
   cursor: default;
@@ -158,12 +182,12 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #bbbbbb;
+  color: #ffffff;
   font-size: 0.95rem;
 }
 
 .contact-item svg {
-  color: #cccccc;
+  color: #ffffff;
   flex-shrink: 0;
 }
 
@@ -319,4 +343,4 @@
   .contact-item {
     justify-content: center;
   }
-} 
+}

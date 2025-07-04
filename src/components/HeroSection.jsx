@@ -64,9 +64,9 @@ const HeroSection = ({ onJoinClick }) => {
               <span className="gradient-text" style={{ color: "white" }}>
                 QR ile
               </span>{" "}
-              İşletmenizi
+              <span className="highlight">İşletmenizi</span>
               <br />
-              <span className="highlight">Dijital Dünyaya</span> Taşıyın
+              <span className="highlight">Dijital Dünyaya Taşıyın</span>
             </h1>
 
             <p className="hero-description">

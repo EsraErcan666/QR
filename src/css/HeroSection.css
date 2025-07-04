@@ -123,21 +123,28 @@
   line-height: 1.2;
   margin-bottom: 1.5rem;
   margin-right: 80px;
-  color: #fff;
+  color: #ffffff;
 }
 
-.hero-section .gradient-text {
+.hero-title .gradient-text {
   color: #ffffff;
+  font-weight: 500; 
   background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  background-clip: unset;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
   text-shadow: none;
 }
 
-
 .highlight {
-  color: #fff;
+  color: #ffffff; 
+  background: transparent; 
+  padding: 0;
+  font-weight: normal; 
+  text-shadow: none !important;
+  color: #f0f0f0 !important;
+  background-image: none !important; 
+  -webkit-text-fill-color: inherit !important; 
 }
 
 .hero-description {
