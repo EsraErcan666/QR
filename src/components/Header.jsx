@@ -35,6 +35,10 @@ const Header = () => {
 
         {/* Hamburger ve Menü - Sağ */}
         <div className="header-right">
+          {/* Overlay */}
+          {isMenuOpen && (
+            <div className="menu-overlay active" onClick={closeMenu}></div>
+          )}
           <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
             <ul className="nav-list">
               <li className="nav-item">

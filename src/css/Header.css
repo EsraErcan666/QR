@@ -223,23 +223,77 @@
     }
 
     .nav-menu {
-        top: 70px;
-        height: calc(100vh - 70px);
-        
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 60vw;
+        max-width: 240px;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--color-white) 0%);
+        box-shadow: -2px 0 8px rgba(0,0,0,0.10);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform var(--transition);
+        z-index: 1200;
+        padding-top: 40px;
+    }
+    .nav-menu.active {
+        transform: translateX(0);
     }
     .nav-list {
-        align-items: center;
-        justify-content: center;
         width: 100%;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding-left: 0;
+        align-items: center;
+        justify-content: flex-start;
     }
-    .nav-item{
+    .nav-item {
+        width: 100%;
         display: flex;
         justify-content: center;
-        width: 100%;
     }
-
     .nav-link {
-        font-size: 1.1rem;
-        padding: 0.8rem 1.5rem;
+        width: auto;
+        min-width: 120px;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        border-radius: 12px;
+        background: #737373;
+        color: #fff;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: none;
+        transition: background 0.2s;
+        text-align: center;
+        display: inline-block;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+        background: #555;
+        color: #fff;
+    }
+    .header-right {
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+    .hamburger {
+        margin-right: 20px;
+    }
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.25);
+        z-index: 1199;
+        transition: opacity 0.3s;
+        opacity: 0;
+    }
+    .menu-overlay.active {
+        display: block;
+        opacity: 1;
     }
 }
