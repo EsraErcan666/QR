@@ -73,15 +73,18 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-          <button
-            className={`hamburger ${isMenuOpen ? "open" : ""}`}
-            onClick={toggleMenu}
-            aria-label="Menüyü Aç / Kapat"
-          >
-            <span className="hamburger-line" />
-            <span className="hamburger-line" />
-            <span className="hamburger-line" />
-          </button>
+          {/* Hamburger butonunu sadece menü kapalıyken göster */}
+          {!isMenuOpen && (
+            <button
+              className={`hamburger ${isMenuOpen ? "open" : ""}`}
+              onClick={toggleMenu}
+              aria-label="Menüyü Aç / Kapat"
+            >
+              <span className="hamburger-line" />
+              <span className="hamburger-line" />
+              <span className="hamburger-line" />
+            </button>
+          )}
         </div>
       </div>
     </header>
