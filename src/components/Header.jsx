@@ -43,7 +43,7 @@ const Header = () => {
                   className={`nav-link ${isActive("/") ? "active" : ""}`}
                   onClick={closeMenu}
                 >
-                  Ana Sayfa
+                  Ana Sayfa  
                 </Link>
               </li>
               <li className="nav-item">

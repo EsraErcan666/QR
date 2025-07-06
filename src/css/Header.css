@@ -114,6 +114,7 @@
 /* HAMBURGER BUTTON */
 .hamburger {
     display: none;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
     width: 20px;
@@ -225,6 +226,16 @@
         top: 70px;
         height: calc(100vh - 70px);
         
+    }
+    .nav-list {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .nav-item{
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .nav-link {
