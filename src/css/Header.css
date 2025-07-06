@@ -226,21 +226,23 @@
         display: none !important;
     }
     .nav-menu.active {
-        display: flex !important;
-        position: fixed !important;
-        top: 0 !important;
-        right: 0 !important;
         left: auto !important;
+        right: 0 !important;
         width: 60vw !important;
-        max-width: 240px !important;
-        height: 100vh !important;
+        max-width: 320px !important;
+        min-width: unset !important;
+        height: 100% !important;
+        min-height: 100vh !important;
         background: #fff !important;
         box-shadow: -2px 0 8px rgba(0,0,0,0.10) !important;
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 1200 !important;
+        padding-top: 40px !important;
+        display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: center !important;
-        z-index: 1200 !important;
-        padding-top: 40px !important;
         animation: slideInMenu 0.3s cubic-bezier(0.4,0,0.2,1);
     }
     @keyframes slideInMenu {
@@ -304,4 +306,9 @@
         display: block;
         opacity: 1;
     }
+}
+
+body.menu-open,
+html.menu-open {
+  overflow-x: hidden !important;
 }
