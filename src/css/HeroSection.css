@@ -151,9 +151,9 @@
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  opacity: 0.9;
   max-width: 500px;
   color: #ffffff;
+  text-shadow: none !important;
 }
 
 /* Features */

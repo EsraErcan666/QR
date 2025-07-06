@@ -358,9 +358,8 @@
 .logo-slider-container {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 50px;
   background: transparent;
-  padding: 0;
   display: block;
 }
 .logo-slider-track {
@@ -378,7 +377,7 @@
   opacity: 0.85;
   transition: filter 0.3s, opacity 0.3s;
   background: #fff;
-  border-radius: 16px;
+  border-radius: 50%;
   border: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   flex-shrink: 0;
