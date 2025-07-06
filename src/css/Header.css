@@ -223,6 +223,10 @@
     }
 
     .nav-menu {
+        display: none !important;
+    }
+    .nav-menu.active {
+        display: flex !important;
         position: fixed !important;
         top: 0 !important;
         right: 0 !important;
@@ -235,13 +239,13 @@
         flex-direction: column !important;
         justify-content: flex-start !important;
         align-items: center !important;
-        transform: translateX(100%) !important;
-        transition: transform var(--transition) !important;
         z-index: 1200 !important;
         padding-top: 40px !important;
+        animation: slideInMenu 0.3s cubic-bezier(0.4,0,0.2,1);
     }
-    .nav-menu.active {
-        transform: translateX(0) !important;
+    @keyframes slideInMenu {
+        from { transform: translateX(100%);}
+        to { transform: translateX(0);}
     }
     .nav-list {
         width: 100%;
@@ -281,7 +285,11 @@
         margin-left: auto;
     }
     .hamburger {
-        margin-right: 20px;
+        display: flex !important;
+        z-index: 2000 !important;
+    }
+    .hamburger-line {
+        background: #222 !important;
     }
     .menu-overlay {
         display: none;

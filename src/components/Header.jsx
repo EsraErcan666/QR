@@ -18,6 +18,8 @@ const Header = () => {
     return location.pathname.startsWith(path);
   };
 
+  console.log('isMenuOpen:', isMenuOpen);
+
   return (
     <header className="header">
       <div className="header-container">
