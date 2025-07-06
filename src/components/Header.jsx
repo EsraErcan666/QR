@@ -51,7 +51,7 @@ const Header = () => {
           {isMenuOpen && (
             <div className="menu-overlay active" onClick={closeMenu}></div>
           )}
-          <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
+          <nav id="nav-menu" className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
             <ul className="nav-list">
               <li className="nav-item">
                 <Link
@@ -78,7 +78,11 @@ const Header = () => {
             <button
               className={`hamburger ${isMenuOpen ? "open" : ""}`}
               onClick={toggleMenu}
+              onTouchStart={toggleMenu}
               aria-label="Menüyü Aç / Kapat"
+              aria-expanded={isMenuOpen}
+              aria-controls="nav-menu"
+              type="button"
             >
               <span className="hamburger-line" />
               <span className="hamburger-line" />

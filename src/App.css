@@ -1,7 +1,19 @@
+/* CSS Variables */
+:root {
+  --color-primary: #222222;
+  --color-secondary: #888888;
+  --color-dark: #111111;
+  --color-light: #f5f5f5;
+  --color-white: #e8e8e8;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --transition: all 0.3s ease;
+}
+
 /* APP GENERAL STYLES */
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -15,15 +27,26 @@ body {
   background-color: #ffffff;
   color: #cccccc;
   text-shadow: 0 0 20px rgba(200, 200, 200, 0.5);
+  /* iOS Safari için viewport düzeltmeleri */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .app {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 main {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 
@@ -51,6 +74,11 @@ main {
   color: var(--color-dark);
 }
 
+::-moz-selection {
+  background: rgba(95, 39, 205, 0.2);
+  color: var(--color-dark);
+}
+
 /* Focus Styling */
 *:focus {
   outline: 2px solid var(--color-primary);
@@ -60,18 +88,40 @@ main {
 /* Button Reset */
 button {
   font-family: inherit;
+  /* iOS Safari için button düzeltmeleri */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* Link Reset */
 a {
   color: inherit;
   text-decoration: none;
+  /* iOS Safari için link düzeltmeleri */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 /* Image Reset */
 img {
   max-width: 100%;
   height: auto;
+  /* iOS Safari için image düzeltmeleri */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
 
 /* Utility Classes */
@@ -95,46 +145,100 @@ img {
 
 /* Animation Classes */
 .fade-in {
+  -webkit-animation: fadeIn 0.6s ease-in-out;
   animation: fadeIn 0.6s ease-in-out;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
     transform: translateY(20px);
   }
   to {
     opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
   }
 }
 
 .slide-in-left {
+  -webkit-animation: slideInLeft 0.6s ease-out;
   animation: slideInLeft 0.6s ease-out;
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideInLeft {
   from {
     opacity: 0;
+    -webkit-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
     transform: translateX(-50px);
   }
   to {
     opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
     transform: translateX(0);
   }
 }
 
 .slide-in-right {
+  -webkit-animation: slideInRight 0.6s ease-out;
   animation: slideInRight 0.6s ease-out;
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
 }
 
 @keyframes slideInRight {
   from {
     opacity: 0;
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
     transform: translateX(50px);
   }
   to {
     opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
     transform: translateX(0);
   }
 }
@@ -156,9 +260,15 @@ img {
 }
 
 .blurred {
+  -webkit-filter: blur(4px);
   filter: blur(4px);
   pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  -webkit-transition: -webkit-filter 0.3s;
+  -o-transition: -o-filter 0.3s;
   transition: filter 0.3s;
 }
 
@@ -170,8 +280,14 @@ img {
   height: 100vh;
   background: rgba(0,0,0,0.35);
   z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -184,4 +300,53 @@ img {
   border: none;
   cursor: pointer;
   z-index: 1001;
+  /* iOS Safari için button düzeltmeleri */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* iOS Safari için özel düzeltmeler */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS Safari'de viewport sorunlarını önler */
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .app {
+    /* iOS Safari'de flexbox sorunlarını önler */
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
+  }
+  
+  /* iOS Safari'de touch olaylarını iyileştirir */
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+/* Eski tarayıcılar için fallback'ler */
+@supports not (display: flex) {
+  .app {
+    display: block;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
