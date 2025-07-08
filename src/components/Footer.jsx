@@ -97,7 +97,7 @@ const Footer = ({ onContactClick }) => {
             </ul>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info */ }
           <motion.div
               className="footer-section"
               initial={{opacity: 0, y: 30}}
