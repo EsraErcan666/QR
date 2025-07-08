@@ -97,7 +97,7 @@ const Footer = ({ onContactClick }) => {
             </ul>
           </motion.div>
 
-          {/* Contact Info */ }
+          {/* Contact Info */}
           <motion.div
               className="footer-section"
               initial={{opacity: 0, y: 30}}
@@ -115,17 +115,17 @@ const Footer = ({ onContactClick }) => {
                 <MapPin size={18}/>
                 <span>Balıkesir, Türkiye</span>
               </div>
-              <div className="contact-item">
+
+              <div className="contact-item" style={{display: 'flex', gap: '10px'}}>
                 <a href="https://www.instagram.com/qreatione" target="_blank" rel="noopener noreferrer">
                   <Instagram size={20}/>
                 </a>
-              </div>
-              <div className="contact-item">
                 <a href="https://www.linkedin.com/company/qreatione" target="_blank" rel="noopener noreferrer">
                   <Linkedin size={20}/>
                 </a>
               </div>
             </div>
+
 
           </motion.div>
         </div>
