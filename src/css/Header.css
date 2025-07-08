@@ -10,8 +10,11 @@
 
 /* HEADER GENEL YAPI */
 .header {
+    background: var(--color-white); /* Fallback for older browsers */
     background: linear-gradient(135deg, var(--color-white) 0%);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
+    -webkit-box-shadow: var(--shadow);
     box-shadow: var(--shadow);
     position: sticky;
     top: 0;
@@ -21,21 +24,33 @@
 }
 
 .header-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 2rem;
     height: 100px;
 }
 
 .header-left,
 .header-right {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     overflow: hidden;
+    padding-right: 10px;
 }
 
 /* LOGO */
@@ -43,38 +58,56 @@
     height: 60px;
     width: auto;
     max-width: 150px;
+    -o-object-fit: contain;
     object-fit: contain;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
     max-height: 100%;
+    -webkit-transition: -webkit-transform var(--transition);
+    -o-transition: -o-transform var(--transition);
     transition: transform var(--transition);
 }
 
 .logo-image:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
 
 .logo:focus,
 .logo-image:focus {
     outline: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
 /* NAVIGATION (DESKTOP) */
 .nav-menu {
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
     flex: 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     margin-left: auto;
 }
 
 .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 2rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
     margin-left: auto;
+    margin-top: 10px;
 }
 
 .nav-item {
@@ -92,9 +125,13 @@
     border-radius: 12px;
     background-color: #737373; 
     overflow: hidden;
+    -webkit-transition: none; 
+    -o-transition: none;
     transition: none; 
     z-index: 1;
+    -webkit-backdrop-filter: none;
     backdrop-filter: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
@@ -107,13 +144,20 @@
     color: #ffffff; /* Aynı kalır */
     background-color: #737373; /* Aynı kalır */
     text-shadow: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
 /* HAMBURGER BUTTON */
 .hamburger {
     display: none;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     width: 20px;
     height: 15px;
@@ -122,7 +166,15 @@
     cursor: pointer;
     padding: 0;
     z-index: 1100;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    -webkit-tap-highlight-color: transparent; /* iOS için */
+    -webkit-touch-callout: none; /* iOS için */
+    -webkit-user-select: none; /* iOS için */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .hamburger:hover .hamburger-line {
@@ -133,10 +185,17 @@
     height: 2px;
     background: var(--color-dark);
     border-radius: 3px;
+    -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
 }
 
 .hamburger.open .hamburger-line:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(5px, 5px);
+    -ms-transform: rotate(45deg) translate(5px, 5px);
     transform: rotate(45deg) translate(5px, 5px);
 }
 
@@ -145,6 +204,8 @@
 }
 
 .hamburger.open .hamburger-line:nth-child(3) {
+    -webkit-transform: rotate(-45deg) translate(5px, -5px);
+    -ms-transform: rotate(-45deg) translate(5px, -5px);
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
@@ -157,20 +218,37 @@
         width: 100%;
         height: calc(100vh - 80px);
         background: var(--color-white);
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
         transform: translateX(-100%);
+        -webkit-transition: -webkit-transform var(--transition);
+        -o-transition: -o-transform var(--transition);
         transition: transform var(--transition);
     }
 
     .nav-menu.active {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
         transform: translateX(0);
     }
 
     .nav-list {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
         gap: 2.5rem;
+        margin-top: 0;
     }
 
     .nav-link {
@@ -178,6 +256,8 @@
     }
 
     .hamburger {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 20px;
         height: 15px;
@@ -220,12 +300,160 @@
     }
 
     .nav-menu {
-        top: 70px;
-        height: calc(100vh - 70px);
+        display: none !important;
     }
-
+    .nav-menu.active {
+        left: auto !important;
+        right: 0 !important;
+        width: 60vw !important;
+        max-width: 320px !important;
+        min-width: unset !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+        background: #fff !important;
+        -webkit-box-shadow: -2px 0 8px rgba(0,0,0,0.10) !important;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.10) !important;
+        position: fixed !important;
+        top: 0 !important;
+        z-index: 1200 !important;
+        padding-top: 40px !important;
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+        -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+        justify-content: flex-start !important;
+        -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+        -webkit-animation: slideInMenu 0.3s cubic-bezier(0.4,0,0.2,1);
+        animation: slideInMenu 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    @-webkit-keyframes slideInMenu {
+        from { -webkit-transform: translateX(100%);}
+        to { -webkit-transform: translateX(0);}
+    }
+    @keyframes slideInMenu {
+        from { -webkit-transform: translateX(100%); -ms-transform: translateX(100%); transform: translateX(100%);}
+        to { -webkit-transform: translateX(0); -ms-transform: translateX(0); transform: translateX(0);}
+    }
+    .nav-list {
+        width: 100%;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding-left: 0;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .nav-item {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
     .nav-link {
-        font-size: 1.1rem;
-        padding: 0.8rem 1.5rem;
+        width: auto;
+        min-width: 120px;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        border-radius: 12px;
+        background: #737373;
+        color: #fff;
+        margin-left: 0;
+        margin-right: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-transition: background 0.2s;
+        -o-transition: background 0.2s;
+        transition: background 0.2s;
+        text-align: center;
+        display: inline-block;
     }
+    .nav-link:hover,
+    .nav-link.active {
+        background: #555;
+        color: #fff;
+    }
+    .header-right {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        margin-left: auto;
+    }
+    .hamburger {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 2001 !important;
+        background: none;
+        border: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        /* iOS için ek özellikler */
+        -webkit-tap-highlight-color: transparent !important;
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;
+    }
+    .hamburger-line {
+        background: #222 !important;
+    }
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(0,0,0,0.25);
+        z-index: 1199;
+        -webkit-transition: opacity 0.3s;
+        -o-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        opacity: 0;
+    }
+    .menu-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/* iOS Safari için özel düzeltmeler */
+@supports (-webkit-touch-callout: none) {
+    .hamburger {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+    
+    .hamburger-line {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
+
+body.menu-open,
+html.menu-open {
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100vw !important;
 }

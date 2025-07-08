@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import "../css/Footer.css";
 import { NavLink } from "react-router-dom";
-import logo3 from '../assets/logo3.png';
+import logo3 from '../assets/logo-1.png';
 
 const Footer = ({ onContactClick }) => {
   const currentYear = new Date().getFullYear();
@@ -31,8 +31,8 @@ const Footer = ({ onContactClick }) => {
             viewport={{ once: true }}
           >
             <div className="footer-logo">
-              <img src={logo3} alt="Logo 3" style={{ width: 40, height: 40 }} />
-              <h3>QREATIONE</h3>
+              <img src={logo3} alt="Logo 3" style={{ width: 100, height: 100}} />
+              {/* <h3>QREATIONE</h3> */}
             </div>
             <p className="footer-description">
               İşletmenizi dijital dünyaya taşıyan modern QR hosting çözümleri.
@@ -41,7 +41,7 @@ const Footer = ({ onContactClick }) => {
 
           {/* Quick Links */}
           <motion.div
-            className="footer-section"
+            className="footer-section fast-links"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}

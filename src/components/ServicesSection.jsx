@@ -19,37 +19,37 @@ const ServicesSection = ({ onJoinClick }) => {
       icon: <QrCode />,
       title: "QR Kod Oluşturma",
       description: "Özel tasarımlı QR kodlar ile markanızı öne çıkarın. Renkli, logo entegreli ve özelleştirilebilir QR kodlar.",
-      features: ["Özel tasarım", "Logo entegrasyonu", "Renk seçenekleri"]
+      features: ["Özel Tasarım", "Logo Entegrasyonu", "Renk Seçenekleri"]
     },
     {
       icon: <Smartphone />,
       title: "Mobil Uyumlu",
       description: "Tüm cihazlarda mükemmel görünüm. Responsive tasarım ile her ekran boyutunda optimize edilmiş deneyim.",
-      features: ["Responsive tasarım", "Hızlı yükleme", "Touch-friendly"]
+      features: ["Responsive Tasarım", "Hızlı Yükleme", "Touch-Friendly"]
     },
     {
       icon: <Globe />,
       title: "7/24 Erişim",
       description: "Kesintisiz hizmet garantisi. Yüksek performanslı sunucular ile %99.9 uptime oranı.",
-      features: ["%99.9 uptime", "CDN desteği", "Otomatik yedekleme"]
+      features: ["%99.9 Uptime", "CDN Desteği", "Otomatik Yedekleme"]
     },
     {
       icon: <Shield />,
       title: "Güvenli Hosting",
       description: "SSL sertifikası ve güvenlik protokolleri ile verileriniz her zaman korunur.",
-      features: ["SSL sertifikası", "DDoS koruması", "Güvenlik duvarı"]
+      features: ["SSL Sertifikası", "DDoS Koruması", "Güvenlik Duvarı"]
     },
     {
       icon: <Zap />,
       title: "Hızlı Kurulum",
       description: "5 dakikada QR kodunuzu oluşturun ve yayına alın. Basit ve kullanıcı dostu arayüz.",
-      features: ["5 dakika kurulum", "Kolay yönetim", "Anında yayın"]
+      features: ["5 dakika Kurulum", "Kolay Yönetim", "Anında Yayın"]
     },
     {
       icon: <BarChart3 />,
       title: "Analitik Raporlar",
       description: "QR kod performansınızı takip edin. Detaylı analitik raporlar ile müşteri davranışlarını analiz edin.",
-      features: ["Gerçek zamanlı veriler", "Detaylı raporlar", "Performans analizi"]
+      features: ["Gerçek Zamanlı Veriler", "Detaylı Raporlar", "Performans Analizi"]
     }
   ];
 

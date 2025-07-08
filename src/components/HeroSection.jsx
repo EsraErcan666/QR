@@ -4,7 +4,7 @@ import { QrCode, Globe, Zap, Shield } from "lucide-react";
 import "../css/HeroSection.css";
 import { useNavigate } from "react-router-dom";
 import logoImage from "../assets/logo.png";
-import home3 from "../assets/home3.png";
+import home3 from "../assets/home-3.png";
 
 const HeroSection = ({ onJoinClick }) => {
   const navigate = useNavigate();

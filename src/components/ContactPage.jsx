@@ -65,7 +65,7 @@ const ContactPage = ({ onClose }) => {
             </div>
             <div className="form-side">
               <form onSubmit={handleSubmit}>
-                <h1>İşletmeniz İçin İletişime Geçin</h1>
+              <h1 class="contact-title">İşletmeniz İçin İletişime Geçin</h1>
                 <div className="form-inputs">
                   <div className="contact-left">
                     <label>Ad</label>
