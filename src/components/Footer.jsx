@@ -99,45 +99,44 @@ const Footer = ({ onContactClick }) => {
 
           {/* Contact Info */}
           <motion.div
-            className="footer-section"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
+              className="footer-section"
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              transition={{duration: 0.6, delay: 0.3}}
+              viewport={{once: true}}
           >
             <h4>İletişim</h4>
             <div className="contact-info">
               <div className="contact-item">
-                <Mail size={18} />
+                <Mail size={18}/>
                 <span>qreationel@qreatione.com</span>
               </div>
-              {/*<div className="contact-item">
-                <Phone size={18} />
-                <span></span>
-              </div>*/}
               <div className="contact-item">
-                <MapPin size={18} />
+                <MapPin size={18}/>
                 <span>Balıkesir, Türkiye</span>
               </div>
               <div className="contact-item">
-                <a
-                  href="https://www.instagram.com/qreatione"
-                  
-                >
-                  <Instagram size={20} />
+                <a href="https://www.instagram.com/qreatione" target="_blank" rel="noopener noreferrer">
+                  <Instagram size={20}/>
+                </a>
+              </div>
+              <div className="contact-item">
+                <a href="https://www.linkedin.com/company/qreatione" target="_blank" rel="noopener noreferrer">
+                  <Linkedin size={20}/>
                 </a>
               </div>
             </div>
+
           </motion.div>
         </div>
 
         {/* Bottom Footer */}
         <motion.div
-          className="footer-bottom"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
+            className="footer-bottom"
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
+            transition={{duration: 0.6, delay: 0.4}}
+            viewport={{once: true}}
         >
           <div className="footer-bottom-content">
             <p>&copy; {currentYear} QREATIONE.</p>
